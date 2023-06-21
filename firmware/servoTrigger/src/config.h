@@ -12,9 +12,9 @@
 /*** BUZZER PINS ***/
 #define buzzer 5
 
-/*** SERVO PINS ***/
-#define servoA 9
-#define servoB 10
+// /*** SERVO PINS ***/
+// #define servoA 9
+// #define servoB 10
 
 /*** PYRO SIGNAL PINS ***/
 #define pyroSignalA 2
