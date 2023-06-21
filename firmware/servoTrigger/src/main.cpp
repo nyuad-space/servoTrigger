@@ -17,9 +17,13 @@ void setup() {
   Serial.begin(9600); // Initialize serial communication
   myServoA.attach(servoPinA,850, 2530); // Attach the servo to the corresponding pin
   myServoB.attach(servoPinB,850, 2530); // Attach the servo to the corresponding pin
-    
-  myServoA.write(180);
-  myServoB.write(180);
+
+    for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 145 degrees
+      myServoA.write(pos); 
+      myServoB.write(180-pos); // tell servo to go to position in variable 'pos'
+      delay(20); // waits 10ms for the servo to reach the position
+    }
+
 }
 
 void loop() {
@@ -38,7 +42,7 @@ void resetServo() {
     for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 145 degrees
       myServoA.write(pos); 
       myServoB.write(180-pos); // tell servo to go to position in variable 'pos'
-      delay(15); // waits 10ms for the servo to reach the position
+      delay(20); // waits 10ms for the servo to reach the position
     }
 }
 
@@ -46,7 +50,7 @@ void triggerServo() {
     for (pos = 180; pos >= 0; pos -= 1) { // goes from 145 degrees to 0 degrees
       myServoA.write(pos);
       myServoB.write(180-pos); // tell servo to go to position in variable 'pos'
-      delay(15); // waits 10ms for the servo to reach the position
+      delay(20); // waits 10ms for the servo to reach the position
     }
 }
 
