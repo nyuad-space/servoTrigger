@@ -10,6 +10,9 @@ int triggerValue = 1; // Input value to trigger the servo
 int resetValue = 2; // Input value to reset the servo
 int pos = 0;
 
+void resetServo();
+void triggerServo();
+
 void setup() {
   Serial.begin(9600); // Initialize serial communication
   myServoA.attach(servoPinA,850, 2530); // Attach the servo to the corresponding pin
